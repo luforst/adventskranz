@@ -3,8 +3,10 @@ from turtle import *
 GROESSE = 0.5
 FARBE = "red"
 FAERBEN = True
+SHAPE = "turtle"
 
 fillcolor(FARBE)
+shape(SHAPE)
 
 def zeichneKerze(brennt):
     pd()
@@ -41,4 +43,4 @@ def zeichneFlamme():
 
 ##zeichneKerze(brennt=False) # testweise erstmal nur nicht brennende Kerze
 zeichneKerze(True)
-hide()
+hideturtle()
