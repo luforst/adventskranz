@@ -40,7 +40,8 @@ def zeichneFlamme():
     t.color("black")
     t.back(GROESSE*30)
     t.pu()
-    t.home()
+    t.bk(GROESSE*400)
+    t.right(90)
 
 if __name__=="__main__":
     zeichneKerze(True)
