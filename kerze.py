@@ -7,6 +7,7 @@ SHAPE = "turtle"
 
 t.fillcolor(FARBE)
 t.shape(SHAPE)
+t.pu()
 
 def zeichneKerze(brennt):
     t.pd()
