@@ -41,6 +41,6 @@ def zeichneFlamme():
     pu()
     home()
 
-##zeichneKerze(brennt=False) # testweise erstmal nur nicht brennende Kerze
-zeichneKerze(True)
-hideturtle()
+if __name__=="__main__":
+    zeichneKerze(True)
+    hideturtle()
