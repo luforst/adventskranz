@@ -11,6 +11,7 @@ t.pu()
 
 def zeichneKerze(brennt):
     t.pd()
+    t.fillcolor(FARBE)
     t.begin_fill()
     t.forward(GROESSE*100)
     t.left(90)
