@@ -44,6 +44,27 @@ def zeichneFlamme():
     t.bk(GROESSE*400)
     t.right(90)
 
+def zeichneZweige(numCandles):
+    t.pd()
+    t.pensize(100)
+    t.color("darkgreen")
+    t.fd(numCandles * 75)
+    t.bk(numCandles * 150)
+    t.pu()
+
+def zeichneKranz(numCandles, numBurning):
+    t.pu()
+    if numCandles in [2,4]:
+        t.bk(GROESSE * 125)
+    t.bk(GROESSE * 250) # equivalent to numCandles * GROESSE * 250/numCandles
+    for i in range(numCandles):
+        isBurning = (i < numBurning)
+        zeichneKerze(isBurning)
+        t.fd(GROESSE * 250)
+    t.pu()
+    t.home()
+    zeichneZweige(numCandles)
+
 if __name__=="__main__":
-    zeichneKerze(True)
+    zeichneKranz(4, 4)
     t.hideturtle()
