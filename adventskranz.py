@@ -1,6 +1,6 @@
 import turtle as t
 
-GROESSE = 0.5
+GROESSE = 0.4
 FARBE = "red"
 FAERBEN = True
 SHAPE = "turtle"
@@ -46,10 +46,10 @@ def zeichneFlamme():
 
 def zeichneZweige(numCandles):
     t.pd()
-    t.pensize(100)
+    t.pensize(GROESSE * 200)
     t.color("darkgreen")
-    t.fd(numCandles * 75)
-    t.bk(numCandles * 150)
+    t.fd(numCandles * 75 * GROESSE*2)
+    t.bk(numCandles * 150 * GROESSE*2)
     t.pu()
 
 def zeichneKranz(numCandles, numBurning):
