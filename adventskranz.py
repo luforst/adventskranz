@@ -1,50 +1,50 @@
 import turtle as t
 
-GROESSE = 0.5
-FARBE = "red"
-FAERBEN = True
+SIZE = 0.5
+CANDLE_COLOR = "red"
+DYE = True
 SHAPE = "turtle"
 
-t.fillcolor(FARBE)
+t.fillcolor(CANDLE_COLOR)
 t.shape(SHAPE)
 t.pu()
 
-def zeichneKerze(brennt):
+def drawCandle(is_candle_burning):
     t.pd()
-    t.fillcolor(FARBE)
+    t.fillcolor(CANDLE_COLOR)
     t.begin_fill()
-    t.forward(GROESSE*100)
+    t.forward(SIZE*100)
     t.left(90)
-    t.forward(GROESSE*400)
+    t.forward(SIZE*400)
     t.left(90)
-    t.forward(GROESSE*100)
+    t.forward(SIZE*100)
     t.right(90)
-    t.forward(GROESSE*30)
-    t.back(GROESSE*30)
+    t.forward(SIZE*30)
+    t.back(SIZE*30)
     t.left(90)
-    t.forward(GROESSE*100)
+    t.forward(SIZE*100)
     t.left(90)
-    t.forward(GROESSE*400)
+    t.forward(SIZE*400)
     t.left(90)
-    t.forward(GROESSE*100)
+    t.forward(SIZE*100)
     t.end_fill()
     t.pu()
-    if brennt:
-        zeichneFlamme()
+    if is_candle_burning:
+        drawFlame()
 
-def zeichneFlamme():
+def drawFlame():
     t.left(90)
-    t.fd(GROESSE*430)
+    t.fd(SIZE*430)
     t.pd()
     t.color("yellow")
-    t.dot(GROESSE*60)
+    t.dot(SIZE*60)
     t.color("black")
-    t.back(GROESSE*30)
+    t.back(SIZE*30)
     t.pu()
-    t.bk(GROESSE*400)
+    t.bk(SIZE*400)
     t.right(90)
 
-def zeichneZweige(numCandles):
+def drawLop(numCandles):
     t.pd()
     t.pensize(100)
     t.color("darkgreen")
@@ -52,19 +52,19 @@ def zeichneZweige(numCandles):
     t.bk(numCandles * 150)
     t.pu()
 
-def zeichneKranz(numCandles, numBurning):
+def drawWreath(numCandles, numBurning):
     t.pu()
     if numCandles in [2,4]:
-        t.bk(GROESSE * 125)
-    t.bk(GROESSE * 250) # equivalent to numCandles * GROESSE * 250/numCandles
+        t.bk(SIZE * 125)
+    t.bk(SIZE * 250) # equivalent to numCandles * SIZE * 250/numCandles
     for i in range(numCandles):
         isBurning = (i < numBurning)
-        zeichneKerze(isBurning)
-        t.fd(GROESSE * 250)
+        drawCandle(isBurning)
+        t.fd(SIZE * 250)
     t.pu()
     t.home()
-    zeichneZweige(numCandles)
+    drawLop(numCandles)
 
 if __name__=="__main__":
-    zeichneKranz(4, 4)
+    drawWreath(4, 4)
     t.hideturtle()
